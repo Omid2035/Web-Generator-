@@ -9,6 +9,7 @@ module.exports = {
     entry: {
         index: './src/js/main.js',
         privacy: './src/js/privacy.js',
+        terms: './src/js/terms.js',
         form: './src/js/form.js',
     },
     output: {
@@ -66,6 +67,11 @@ module.exports = {
             template: './src/privacy.html',
             filename: 'privacy.html',
             chunks: ['privacy'], // Specify which bundle to include
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/terms.html',
+            filename: 'terms.html',
+            chunks: ['terms'], // Specify which bundle to include
         }),
         new HtmlWebpackPlugin({
             template: './src/form.html',
