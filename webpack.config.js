@@ -7,16 +7,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 module.exports = {
     entry: {
-        index: './src/js/main.js',
-        "privacy-policy": './src/js/privacy-policy.js',
-        terms: './src/js/terms.js',
-        form: './src/js/form.js',
+        index: './src/pages/home/index.js',
+        "privacy-policy": './src/pages/privacy-policy/index.js',
+        "terms": './src/pages/terms/index.js',
+        form: './src/pages/form/index.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js', // Use different names for different entries
         clean: true, // Clean the output directory before emit
-        assetModuleFilename: 'images/[name][ext]', // Add this line for image outputs
+        assetModuleFilename: 'assets/logo/[name][ext]', // Add this line for image outputs
     },
     module: {
         rules: [
@@ -59,39 +59,39 @@ module.exports = {
     plugins: [
         // Create separate HTML files for each entry
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/pages/home/index.html',
             filename: 'index.html',
             chunks: ['index'], // Specify which bundle to include
         }),
         new HtmlWebpackPlugin({
-            template: './src/privacy-policy.html',
+            template: './src/pages/privacy-policy/index.html',
             filename: 'privacy-policy.html',
             chunks: ['privacy-policy'], // Specify which bundle to include
         }),
         new HtmlWebpackPlugin({
-            template: './src/terms.html',
+            template: './src/pages/terms/index.html',
             filename: 'terms.html',
             chunks: ['terms'], // Specify which bundle to include
         }),
         new HtmlWebpackPlugin({
-            template: './src/form.html',
+            template: './src/pages/form/index.html',
             filename: 'form.html',
             chunks: ['form'], // Specify which bundle to include
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
         }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'COMPANY_NAME': JSON.stringify(process.env.COMPANY_NAME),
-                'COMPANY_EMAIL': JSON.stringify(process.env.COMPANY_EMAIL),
-                'COMPANY_PHONE': JSON.stringify(process.env.COMPANY_PHONE),
-                'COMPANY_ADDRESS': JSON.stringify(process.env.COMPANY_ADDRESS),
-                'COMPANY_LOGO': JSON.stringify(process.env.COMPANY_LOGO),
-                'COMPANY_IMAGE': JSON.stringify(process.env.COMPANY_IMAGE),
-                'COMPANY_COLOR': JSON.stringify(process.env.COMPANY_COLOR || 'blue'),
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         'COMPANY_NAME': JSON.stringify(process.env.COMPANY_NAME),
+        //         'COMPANY_EMAIL': JSON.stringify(process.env.COMPANY_EMAIL),
+        //         'COMPANY_PHONE': JSON.stringify(process.env.COMPANY_PHONE),
+        //         'COMPANY_ADDRESS': JSON.stringify(process.env.COMPANY_ADDRESS),
+        //         'COMPANY_LOGO': JSON.stringify(process.env.COMPANY_LOGO),
+        //         'COMPANY_IMAGE': JSON.stringify(process.env.COMPANY_IMAGE),
+        //         'COMPANY_COLOR': JSON.stringify(process.env.COMPANY_COLOR || 'blue'),
+        //     }
+        // }),
     ],
     devServer: {
         static: {
