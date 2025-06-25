@@ -72,6 +72,11 @@ module.exports = {
                 }
             ],
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/assets/robots.txt', to: 'robots.txt' }
+            ]
+        }),
         // Create separate HTML files for each entry
         new HtmlWebpackPlugin({
             template: './src/pages/home/index.html',
