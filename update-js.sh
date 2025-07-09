@@ -1,5 +1,21 @@
 #!/bin/bash
 
+replace_in_file() {
+    local pattern="$1"
+    local replacement="$2"
+    local file="$3"
+
+    # Escape backslashes first
+    replacement=${replacement//\\/\\\\}
+    # Escape ampersands
+    replacement=${replacement//&/\\&}
+    # Escape delimiter '|'
+    replacement=${replacement//|/\\|}
+    # Escape slashes (optional, only if '/' is used as delimiter — we use '|')
+    # replacement=${replacement//\//\\/}
+
+    sed -i "s|$pattern|$replacement|g" "$file"
+}
 # Script to update company information in JS files
 echo "==== UPDATE-JS SCRIPT STARTED: $(date) ===="
 echo "Current directory: $(pwd)"
@@ -33,20 +49,19 @@ if [ -f "$COMPANY_INFO_FILE" ]; then
     COMPANY_TEMPLATE_MODIFIED="${COMPANY_TEMPLATE//_/-}"
     sed "s|%TEMPLATE_NAME%|$COMPANY_TEMPLATE_MODIFIED|g" "$COMPANY_INFO_FILE" > "$temp_file"
 
-    sed -i "s|%SUB_TEMPLATE_NAME%|$COMPANY_SUB_TEMPLATE|g" "$temp_file"
-    sed -i "s|%COMPANY_NAME%|$COMPANY_NAME|g" "$temp_file"
-    sed -i "s|%COMPANY_EMAIL%|$COMPANY_EMAIL|g" "$temp_file"
-    sed -i "s|%COMPANY_PHONE%|$COMPANY_PHONE|g" "$temp_file"
-    sed -i "s|%COMPANY_ADDRESS%|$COMPANY_ADDRESS|g" "$temp_file"
-    sed -i "s|%COMPANY_LOGO%|$COMPANY_LOGO|g" "$temp_file"
-    sed -i "s|%COMPANY_COLOR%|$COMPANY_COLOR|g" "$temp_file"
+    replace_in_file "%COMPANY_NAME%" "$COMPANY_NAME" "$temp_file"
+    replace_in_file "%COMPANY_EMAIL%" "$COMPANY_EMAIL" "$temp_file"
+    replace_in_file "%COMPANY_PHONE%" "$COMPANY_PHONE" "$temp_file"
+    replace_in_file "%COMPANY_ADDRESS%" "$COMPANY_ADDRESS" "$temp_file"
+    replace_in_file "%COMPANY_LOGO%" "$COMPANY_LOGO" "$temp_file"
+    replace_in_file "%COMPANY_COLOR%" "$COMPANY_COLOR" "$temp_file"
 
     if [ -n "$COMPANY_IMAGES" ]; then
-        sed -i "s|%COMPANY_IMAGES%|$COMPANY_IMAGES|g" "$temp_file"
+        replace_in_file "%COMPANY_IMAGES%" "$COMPANY_IMAGES" "$temp_file"
     fi
 
     if [ -n "$COMPANY_CONSENT" ]; then
-        sed -i "s|%COMPANY_CONSENT%|$COMPANY_CONSENT|g" "$temp_file"
+        replace_in_file "%COMPANY_CONSENT%" "$COMPANY_CONSENT" "$temp_file"
     fi
 
     # Move the processed file back to original location
