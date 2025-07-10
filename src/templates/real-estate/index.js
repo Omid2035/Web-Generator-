@@ -41,7 +41,7 @@ export default {
             phone: "Phone Number*",
             email: "Email*",
             address: "Property Address*",
-            message: "Reason for Selling*"
+            message: "Any Comments*"
         },
         consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By submitting this form and signing up for texts, you consent to receive recurring marketing text messages from "${companyName}" at the number provided, including messages sent by autodialer. Message frequency may vary. Reply HELP for help, STOP to cancel. Consent is not a condition of purchase. Msg and data rates may apply. We do not share mobile opt-in data or consent with any third parties.`,
         privacyText: "I have read and agree to the website's",
