@@ -1,5 +1,5 @@
 // Company information placeholders that get replaced by the build process
-export const templateName = "%TEMPLATE_NAME%";
+export const templateName = "real-estate";
 export const subTemplateName = "%SUB_TEMPLATE_NAME%";
 export const companyName = "%COMPANY_NAME%";
 export const companyEmail = "%COMPANY_EMAIL%";
