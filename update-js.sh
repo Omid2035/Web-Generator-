@@ -14,7 +14,7 @@ replace_in_file() {
     # Escape slashes (optional, only if '/' is used as delimiter — we use '|')
     # replacement=${replacement//\//\\/}
 
-    sed -i '' "s|$pattern|$replacement|g" "$file"
+    sed -i "s|$pattern|$replacement|g" "$file"
 }
 
 # Image URLs for company
