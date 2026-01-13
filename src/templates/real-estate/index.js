@@ -61,7 +61,7 @@ export default {
         }
     },
     hero: {
-        title: "Get the insights you need—fast",
+        title: "Get the insights you need fast",
         subtitle: "Our experienced team delivers weekly real estate tips, neighborhood news, and personalized educational content to help you stay ahead in your local market.",
         ctaText: "Get Started",
         imageUrl: IMAGES["1"]
