@@ -43,14 +43,14 @@ export default {
             address: "Property Address*",
             message: "Any Comments*"
         },
-        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By submitting this form and signing up for texts, you consent to receive recurring marketing text messages from "${companyName}" at the number provided, including messages sent by autodialer. Message frequency may vary. Reply HELP for help, STOP to cancel. Consent is not a condition of purchase. Msg and data rates may apply. We do not share mobile opt-in data or consent with any third parties.`,
-        privacyText: "I have read and agree to the website's",
+        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By providing your phone number, you agree to receive SMS marketing, industry market updates, and outreach messages from "${companyName}". Message frequency may vary. Standard message and data rates may apply. Reply STOP to opt out. Reply HELP for help. We will not share mobile information with third parties for promotional or marketing purposes.`,
+        privacyText: "For more information, please read our",
         privacyLink: {
-            text: "privacy policy",
+            text: "Privacy Policy",
             href: "/privacy-policy.html"
         },
         termsLink: {
-            text: "terms & conditions",
+            text: "Terms & Conditions",
             href: "/terms.html"
         },
         submitButton: "Submit Application",
@@ -79,13 +79,13 @@ export default {
                 icon: "stay-informed",
                 iconSvg: `<svg class="w-8 h-8 ${text('primary', '600')}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>`,
                 title: "2. Stay informed",
-                description: "We'll send you brief, helpful updates with info about pricing trends, selling timelines, and property strategies."
+                description: "We send simple, relevant updates covering trends, timelines, and common questions people ask."
             },
             {
                 icon: "get-exclusive-resources",
                 iconSvg: `<svg class="w-8 h-8 ${text('primary', '600')}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
-                title: "3. Get exclusive resources",
-                description: "Subscribers receive first access to neighborhood reports, webinars, and more — all free."
+                title: "3. Learn at Your Pace",
+                description: "Use the information we share to better understand your options—no pressure, no obligations."
             }
         ]
     },
@@ -121,84 +121,70 @@ export default {
     },
     about: {
         title: `About ${companyName}`,
-        content1: `${companyName} is a real estate marketing brand dedicated to helping homeowners stay informed. We believe that education and transparency are the keys to success in real estate — whether you're selling now or just watching the market.`,
-        content2: "In addition to buying properties, we work with some of the top agents in all areas of the United States. So wether you are looking to get a quick Timeline to Close on your property, or looking to put your property on the market, we are able to help with whatever your needs consist of.",
+        content1: `${companyName} is a nationwide education and consulting brand focused on helping individuals better understand complex processes and options.`,
+        content2: `We believe people make better decisions when they have access to clear information, transparency, and modern tools that simplify the process.`,
+        content3: `Our role is to educate—not pressure—so you can move forward with confidence, whether you’re actively planning or simply staying informed.`,
         imageUrl: IMAGES["3"]
     },
     banner: [
         {
             title: "Your property, your pace, your strategy.",
-            subtitle: "Explore smart real estate solutions designed for today's market.",
+            subtitle: "Helpful insights designed for real people navigating real decisions.",
             ctaText: "Explore Your Options",
             phone: companyPhone
         },
         {
             title: "Your property, your pace, your strategy.",
-            subtitle: "Explore smart real estate solutions designed for today's market.",
+            subtitle: "Helpful insights designed for real people navigating real decisions.",
             ctaText: "Explore Your Options",
             phone: companyPhone
         },
         {
             title: "Your property, your pace, your strategy.",
-            subtitle: "Explore smart real estate solutions designed for today's market.",
+            subtitle: "Helpful insights designed for real people navigating real decisions.",
             ctaText: "Explore Your Options",
             phone: companyPhone
         },
         {
             title: "Your property, your pace, your strategy.",
-            subtitle: "Explore smart real estate solutions designed for today's market.",
+            subtitle: "Helpful insights designed for real people navigating real decisions.",
             ctaText: "Explore Your Options",
             phone: companyPhone
         }
     ],
     compare: {
-        title: "Traditional Home Sales vs. Modern Real Estate Strategies",
+        title: "Traditional Approaches vs. Modern, Informed Decisions",
         backgroundImageUrl: IMAGES["4"],
         tableHeaders: {
-            category: "Category",
-            traditional: "Traditional Home Sale",
-            modern: "Modern Seller Strategies (What We Share)"
+            category: "Topic",
+            traditional: "Traditional Experience",
+            modern: "What We Share"
         },
         rows: [
             {
-                category: "Commissions / Fees",
-                traditional: "Often 6% in agent fees",
-                modern: "Learn how some homeowners avoid this through creative deals"
+                category: "Information Access",
+                traditional: "Hard to find or confusing",
+                modern: "Clear, easy-to-understand explanations"
             },
             {
-                category: "Who Pays Closing Cost?",
-                traditional: "Seller typically pays 2%",
-                modern: "Discover how buyers and sellers are sharing costs in 2024"
+                category: "Decision Pressure",
+                traditional: "Often rushed",
+                modern: "Learn at your own pace"
             },
             {
-                category: "Inspection Contingency",
-                traditional: "Required in most traditional contracts",
-                modern: "Some sellers skip inspections using off-market strategies"
+                category: "Transparency",
+                traditional: "Details revealed late",
+                modern: "Upfront clarity"
             },
             {
-                category: "Appraisal Needed",
-                traditional: "Yes, in most financed purchases",
-                modern: "Learn alternatives used in cash or novation-based closings"
+                category: "Timelines",
+                traditional: "Unclear expectations",
+                modern: "Realistic scenarios explained"
             },
             {
-                category: "Time to Close",
-                traditional: "30–90+ days",
-                modern: "Explore faster closing strategies used by modern investors"
-            },
-            {
-                category: "Number of Showings",
-                traditional: "Multiple open houses",
-                modern: "Discover how sellers minimize showings with pre-qualified buyers"
-            },
-            {
-                category: "Closing Date",
-                traditional: "Buyer picks after offer accepted",
-                modern: "Some sellers negotiate flexible closing with creative buyers"
-            },
-            {
-                category: "Who Pays for Repairs",
-                traditional: "Often seller responsibility",
-                modern: "Some strategies allow sellers to pass repairs to the buyer"
+                category: "Control",
+                traditional: "Limited",
+                modern: "You stay in control"
             }
         ]
     },
@@ -255,8 +241,8 @@ export default {
                 answer: "You can reply STOP at any time to opt out of future messages."
             },
             {
-                question: "What types of properties do you buy?",
-                answer: "We buy all types of properties—single-family homes, multi-family units, apartments, and even vacant land. No matter the size or condition, we're interested in making an offer."
+                question: "Who is this for?",
+                answer: "Anyone who wants to stay informed, understand their options, and make thoughtful decisions without pressure."
             }
         ]
     },

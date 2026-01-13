@@ -49,14 +49,14 @@ export default {
             address: "Property Zip Code*",
             message: "Type of Service Needed (e.g., HVAC, Plumbing, Electrical)*"
         },
-        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By submitting this form and signing up for texts, you consent to receive recurring service updates and promotional messages from "${companyName}" at the number provided. Message frequency varies. Reply HELP for help, STOP to cancel. Consent is not a condition of purchase. Msg and data rates may apply.`,
-        privacyText: "I have read and agree to the website's",
+        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By providing your phone number, you agree to receive SMS marketing, industry market updates, and outreach messages from "${companyName}". Message frequency may vary. Standard message and data rates may apply. Reply STOP to opt out. Reply HELP for help. We will not share mobile information with third parties for promotional or marketing purposes.`,
+        privacyText: "For more information, please read our",
         privacyLink: {
-            text: "privacy policy",
+            text: "Privacy Policy",
             href: "/privacy-policy.html"
         },
         termsLink: {
-            text: "terms & conditions",
+            text: "Terms & Conditions",
             href: "/terms.html"
         },
         submitButton: "Get My Updates",
@@ -79,7 +79,7 @@ export default {
                 icon: "sign-up",
                 iconSvg: `<svg class="w-8 h-8 ${text('primary', '600')}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
                 title: "1. Sign up for updates",
-                description: "Complete the form to start receiving service reminders and time-sensitive updates."
+                description: "Share your contact details to receive educational insights and helpful information."
             },
             {
                 icon: "stay-informed",

@@ -25,6 +25,10 @@ export class About extends LitElement {
                         <p class="text-lg text-gray-600">
                             ${aboutData.content2}
                         </p>
+
+                        <p class="text-lg text-gray-600">
+                            ${aboutData.content3 || ''} </p>
+                        </p>
                     </div>
                 </div>
 

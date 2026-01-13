@@ -49,14 +49,14 @@ export default {
             address: "Favorite Product or Category*",
             message: "Birthday or Special Occasion Month*"
         },
-        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By submitting this form and signing up for texts, you consent to receive recurring promotional messages from ${companyName} at the number provided. Message frequency may vary. Reply HELP for help, STOP to cancel. Consent is not a condition of purchase. Msg and data rates may apply.`,
-        privacyText: "I have read and agree to the website's",
+        consent: companyConsent !== "%COMPANY_CONSENT%" ? companyConsent : `By providing your phone number, you agree to receive SMS marketing, industry market updates, and outreach messages from "${companyName}". Message frequency may vary. Standard message and data rates may apply. Reply STOP to opt out. Reply HELP for help. We will not share mobile information with third parties for promotional or marketing purposes.`,
+        privacyText: "For more information, please read our",
         privacyLink: {
-            text: "privacy policy",
+            text: "Privacy Policy",
             href: "/privacy-policy.html"
         },
         termsLink: {
-            text: "terms & conditions",
+            text: "Terms & Conditions",
             href: "/terms.html"
         },
         submitButton: "Join the VIP List",
