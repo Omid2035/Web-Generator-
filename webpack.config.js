@@ -18,7 +18,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js', // Use different names for different entries
         clean: true, // Clean the output directory before emit
-        assetModuleFilename: 'assets/[name][ext]', // Simplified asset naming
+        assetModuleFilename: 'assets/[path][name][ext]', // Simplified asset naming
         publicPath: '/', // Set public path for all assets
     },
     module: {
